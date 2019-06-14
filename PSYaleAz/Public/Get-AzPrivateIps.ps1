@@ -1,5 +1,44 @@
 function Get-AzPrivateIps {
-    [CmdletBinding()]
+    <#
+		.SYNOPSIS
+        Get-AzPrivateIps retrieves private IP addresses in Azure.
+        
+		.DESCRIPTION
+        Get-AzPrivateIps retrieves private IP addresses in Azure. It returns a [PSCustomObject] with a Result code and a Value that contains an array of IP objects with addresses and associated properties.
+        
+        [PSCustomObject] @{
+            Address = <xxx.xxx.xxx.xxx>
+            Properties = [PSCustomObject] @{
+                DataSensitivity = <Data Sensitivity>
+                AttachedVm = <VM Name>
+                AttachedToVnet = <VNET Name>
+            }
+        }
+
+		.EXAMPLE
+        PS> Get-AzPrivateIps
+        [PScustomObject]
+
+        Name                           Value
+        ----                           -----
+        Value                          {@{Address=10.0.21.4; Properties=}, @{Address=10.6.231.4; Properties=}…}
+        Result                         Success
+        
+        .PARAMETER Subscription [Switch]
+		If specified, commandlet will return all private IPs within the current Azure subscription context. This is the default.
+		.PARAMETER ResourceGroupName [String]
+        If specified, commandlet will return all private IPs for the given Azure resource group within the current subscription context.
+        .PARAMETER Computer [String]
+		If specified with ResourceGroupName of the Computer, the commandlet will return all private IPs for the given Azure virtual machine within the resource group within the current subscription context.
+        
+        .NOTES
+		Name: Get-AzPrivateIps
+		Author: Vincent Balbarin
+		Last Edit: 2019-06-14
+		Keywords: 
+		.LINK
+	#>
+    [CmdletBinding(DefaultParameterSetName='Subscription')]
 
     param(
         [Parameter(ParameterSetName='Subscription', Mandatory=$False)]
