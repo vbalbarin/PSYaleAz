@@ -98,7 +98,7 @@
              Tags = @('Azure', 'ARM', 'Core', 'Linux', 'OSX', 'YaleUniversity')
     
             # A URL to the license for this module.
-             LicenseUri = 'https://github.com/RamblingCookieMonster/PSYaleAz/blob/master/LICENSE'
+             LicenseUri = 'https://github.com/vbalbarin/PSYaleAz/blob/master/LICENSE.md'
     
             # A URL to the main website for this project.
              ProjectUri = 'https://github.com/RamblingCookieMonster/PSYaleAz'
