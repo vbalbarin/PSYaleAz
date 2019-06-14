@@ -20,13 +20,16 @@ Clone repository:
 
 ```powershell
 PS> md './modules'
-PS> git clone https://github.com/vbalbarin/PSYaleAz.git './modules/.'
+PS> git clone https://github.com/vbalbarin/PSYaleAz.git
+PS> cd PSYaleAz
 
 Install `PSYaleAz` module:
 
 ```powershell
-PS> Install-Module $(Resolve-Path 'PSYaleAz')
+PS> $userModulesPath = ($($env:PSModulePath) -split ':|;')[0]
+PS> Copy-Item -Recurse 'PSYaleAz' "$userModulesPath/PSYaleAz"
 PS> Import-Module PSYaleAz
+PS> Get-Module PSYaleAz
 ```
 
 ## Import Module to Azure Automation Runbook.
