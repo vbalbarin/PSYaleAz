@@ -1,0 +1,33 @@
+# Archive and package files
+*.deb
+*.tar.gz
+*.zip
+*.rpm
+*.pkg
+*.nupkg
+*.AppImage
+
+# Backup and Swap files
+*.bak
+*.swp
+
+# Local module folder
+**/psmodules
+**/modules
+
+# macOS
+.DS_Store
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+.AppleDouble
+.LSOverride
